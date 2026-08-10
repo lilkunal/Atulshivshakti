@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cosmic: #0a0e1f;
+  --color-cosmic-light: #141a35;
+  --color-cosmic-mist: #1e2648;
+  --color-sacred-gold: #c9a84c;
+  --color-sacred-gold-light: #e8d5a3;
+  --color-ivory: #f4efe4;
+  --color-ivory-muted: #c8c0b0;
+  --color-shakti-rose: #9b4d6a;
+  --color-shiva-blue: #4a6fa5;
+  --color-surface-input: #0a0e1f;
+  --color-hero-glow-from: #9b4d6a;
+  --color-hero-glow-to: #4a6fa5;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+/* Theme 1 — Cosmic Night (default) */
+:root,
+[data-theme="cosmic"] {
+  --color-cosmic: #0a0e1f;
+  --color-cosmic-light: #141a35;
+  --color-cosmic-mist: #1e2648;
+  --color-sacred-gold: #c9a84c;
+  --color-sacred-gold-light: #e8d5a3;
+  --color-ivory: #f4efe4;
+  --color-ivory-muted: #c8c0b0;
+  --color-shakti-rose: #9b4d6a;
+  --color-shiva-blue: #4a6fa5;
+  --color-surface-input: #0a0e1f;
+  --color-hero-glow-from: #9b4d6a;
+  --color-hero-glow-to: #4a6fa5;
+  --star-color: rgba(232, 213, 163, 0.6);
+}
+
+/* Theme 2 — Temple Dawn (light) */
+[data-theme="temple"] {
+  --color-cosmic: #faf6ef;
+  --color-cosmic-light: #f3ebe0;
+  --color-cosmic-mist: #ebe0d0;
+  --color-sacred-gold: #b45309;
+  --color-sacred-gold-light: #d97706;
+  --color-ivory: #2c1810;
+  --color-ivory-muted: #6b5344;
+  --color-shakti-rose: #9f1239;
+  --color-shiva-blue: #1d4ed8;
+  --color-surface-input: #ffffff;
+  --color-hero-glow-from: #fbbf24;
+  --color-hero-glow-to: #f97316;
+  --star-color: rgba(180, 83, 9, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background: var(--color-cosmic);
+  color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-sacred-gold) 35%, transparent);
+  color: var(--color-ivory);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--color-sacred-gold-light), var(--color-sacred-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cosmic-grid {
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      color-mix(in srgb, var(--color-hero-glow-from) 12%, transparent) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      color-mix(in srgb, var(--color-hero-glow-to) 12%, transparent) 0%,
+      transparent 50%
+    ),
+    linear-gradient(180deg, var(--color-cosmic) 0%, var(--color-cosmic-light) 100%);
+}
+
+.glass-card {
+  background: color-mix(in srgb, var(--color-ivory) 6%, var(--color-cosmic-light));
+  border: 1px solid color-mix(in srgb, var(--color-sacred-gold) 22%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+[data-theme="temple"] .glass-card {
+  background: color-mix(in srgb, white 75%, var(--color-cosmic-light));
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-sacred-gold) 8%, transparent);
+}
+
+.gold-border-glow:hover {
+  border-color: color-mix(in srgb, var(--color-sacred-gold) 45%, transparent);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--color-sacred-gold) 12%, transparent);
+}
+
+.theme-demo-bar {
+  padding-top: max(0.5rem, env(safe-area-inset-top, 0));
+}
+
+.site-header {
+  top: 2.85rem;
+}
+
+@media (min-width: 640px) {
+  .site-header {
+    top: 2.65rem;
+  }
+}
+
+.input-field {
+  background: var(--color-surface-input);
+  border: 1px solid color-mix(in srgb, var(--color-sacred-gold) 25%, transparent);
+  color: var(--color-ivory);
+}
+
+[data-theme="temple"] .input-field {
+  border-color: color-mix(in srgb, var(--color-sacred-gold) 35%, transparent);
+}
+
+[data-theme="temple"] .input-field::placeholder {
+  color: color-mix(in srgb, var(--color-ivory-muted) 80%, transparent);
+}
+
+.whatsapp-float {
+  bottom: max(1.25rem, env(safe-area-inset-bottom, 1.25rem));
+  right: max(1rem, env(safe-area-inset-right, 1rem));
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 639px) {
+  .theme-option {
+    min-height: 48px;
+  }
+}

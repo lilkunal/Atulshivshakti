@@ -8,10 +8,10 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative min-h-[calc(100dvh-7.5rem)] overflow-hidden cosmic-grid pb-16 pt-6 sm:pb-20 sm:pt-10">
+    <section className="relative min-h-[calc(100dvh-var(--site-top-offset)-env(safe-area-inset-top,0px))] overflow-hidden cosmic-grid pb-12 pt-4 sm:pb-20 sm:pt-10">
       <Starfield />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pb-20 pt-8 text-center md:px-6 md:pt-16 lg:flex-row lg:gap-12 lg:text-left">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pb-16 pt-4 text-center sm:pb-20 sm:pt-8 md:px-6 md:pt-16 lg:flex-row lg:gap-12 lg:text-left">
         <div className="flex-1">
           <MotionHeroText>
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sacred-gold/25 bg-sacred-gold/5 px-4 py-1.5 text-xs tracking-widest text-sacred-gold uppercase">
@@ -19,7 +19,7 @@ export function Hero() {
               Trusted Vedic Guidance Since 2010
             </p>
 
-            <h1 className="font-display text-4xl leading-[1.05] font-bold text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-display text-[clamp(2rem,8vw,2.75rem)] leading-[1.08] font-bold text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
               Clarity Through
               <span className="mt-2 block gold-gradient-text italic">Cosmic Wisdom</span>
             </h1>

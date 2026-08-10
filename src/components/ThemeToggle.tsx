@@ -73,9 +73,9 @@ export function ThemeDemoBar() {
   const meta = THEME_META[theme];
 
   return (
-    <div className="theme-demo-bar fixed top-0 right-0 left-0 z-[60] border-b border-sacred-gold/15 bg-cosmic-light/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:px-4">
-        <p className="text-center text-[11px] text-ivory-muted sm:text-left sm:text-xs">
+    <div className="theme-demo-bar fixed top-0 right-0 left-0 z-[60] hidden border-b border-sacred-gold/15 bg-cosmic-light/95 backdrop-blur-md md:block">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2">
+        <p className="text-xs text-ivory-muted">
           <span className="font-semibold text-sacred-gold">Demo:</span> 2 themes —{" "}
           <span className="text-ivory">{meta.label}</span> active
         </p>

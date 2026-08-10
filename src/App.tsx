@@ -24,7 +24,7 @@ function SiteContent() {
       <ScrollProgress />
       <ThemeDemoBar />
       <Header />
-      <main ref={mainRef as React.RefObject<HTMLElement>} className="pt-[7.25rem] sm:pt-[7.5rem]">
+      <main ref={mainRef as React.RefObject<HTMLElement>}>
         <Hero />
         <TrustBar />
         <Services />

@@ -7,3 +7,6 @@ dist
 !.env.example
 tsconfig.tsbuildinfo
 .vite
+test-results/
+playwright-report/
+playwright/.cache/
